@@ -20,6 +20,23 @@
       margin-bottom: 30px;
     }
 
+    .back-btn {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-bottom: 20px;
+    }
+
+    .back-btn:hover {
+      background-color: #217dbb;
+      transform: scale(1.05);
+    }
+
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -63,11 +80,14 @@
 </head>
 <body>
 
+  <!-- 🔹 زر الرجوع -->
+  <a href="index.html" class="back-btn">⬅️ الرجوع إلى الصفحة الرئيسية</a>
+
   <h1>📚 مكتبة الفيديوهات التعليمية</h1>
 
   <div class="video-grid">
 
-    <!-- 🔹 الفيديو الجديد -->
+    <!-- 🔹 الفيديو الأول -->
     <div class="video-card">
       <iframe width="560" height="315"
         src="https://www.youtube.com/embed/SPD8Kz8UqOA?si=GoQ0kcTkw8YEYAzt"
