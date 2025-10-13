@@ -1,0 +1,625 @@
+﻿/* General Body & Reset (تنسيقات عامة للجسم وإعادة ضبط المتصفح) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Amiri', 'Traditional Arabic', serif; /* خطوط عربية، يمكنك تغييرها لاحقًا */
+    direction: rtl; /* لاتجاه النص من اليمين لليسار */
+    text-align: right; /* محاذاة النص لليمين افتراضياً */
+    background-color: #F0F2F5; /* خلفية أفتح وأكثر حيوية */
+    color: #333; /* لون نص أساسي أسود رمادي */
+    line-height: 1.6;
+    overflow-x: hidden; /* لمنع ظهور شريط التمرير الأفقي غير المرغوب فيه */
+    scroll-behavior: smooth; /* لجعل التمرير سلسًا */
+}
+
+/* Header Styling (تنسيقات رأس الصفحة) */
+.main-header {
+    background-color: #1A1A1A; /* خلفية سوداء للهيدر */
+    color: #FFD700; /* لون ذهبي للنصوص الرئيسية في الهيدر */
+    padding: 15px 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* ظل أعمق وأكثر وضوحاً */
+    text-align: center;
+    position: relative; /* للسماح بالعناصر الداخلية بالتموضع */
+    z-index: 1000; /* لضمان ظهوره فوق العناصر الأخرى */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-left, .header-right {
+    font-size: 1.2em; /* تكبير الخط قليلاً */
+    color: #FFD700; /* لون ذهبي بارز */
+    font-weight: bold; /* جعل الخط عريضًا (بولد) */
+    flex-basis: 25%;
+    transition: transform 0.3s ease; /* إضافة حركة عند التحويم */
+}
+.header-left:hover, .header-right:hover {
+    transform: scale(1.03); /* تكبير بسيط عند التحويم */
+}
+
+.header-center {
+    flex-grow: 1;
+}
+
+.main-header h1 {
+    font-size: 4.2em;
+    margin: 0;
+    color: #FFD700;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* ظل أقوى */
+    transition: transform 0.4s ease; /* إضافة حركة عند التحويم */
+}
+.main-header h1:hover {
+    transform: translateY(-5px) scale(1.01); /* رفع بسيط وتكبير عند التحويم */
+}
+
+.main-header .tagline {
+    font-size: 1.5em;
+    margin-top: 5px;
+    color: #FFD700;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* إضافة حركة عند التحويم */
+}
+.main-header .tagline:hover {
+    transform: translateX(-5px); /* إزاحة بسيطة عند التحويم */
+}
+
+/* Navigation Bar (شريط التنقل الرئيسي) */
+.main-nav {
+    background-color: #28a745; /* لون فستقي للشريط الرئيسي */
+    margin-top: 15px;
+    padding: 10px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* ظل أوضح */
+    border-radius: 8px; /* حواف دائرية للشريط نفسه */
+    max-width: 1100px; /* جعل الشريط أضيق قليلاً */
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+.main-nav:hover {
+    transform: translateY(-3px); /* رفع الشريط قليلاً عند التحويم */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav ul li {
+    margin: 0 18px; /* تقليل المسافة قليلاً */
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.15em; /* تكبير الخط قليلاً */
+    padding: 10px 20px; /* زيادة المساحة القابلة للنقر */
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease; /* انتقالات متعددة */
+    border-radius: 8px; /* حواف دائرية أكبر للروابط */
+    position: relative;
+    overflow: hidden; /* لإخفاء أي جزء زائد من التأثير */
+}
+
+.main-nav ul li a:hover {
+    background-color: #218838; /* لون فستقي أغمق عند التحويم */
+    color: #FFD700; /* نص ذهبي عند التحويم */
+    transform: translateY(-2px); /* رفع بسيط للرابط عند التحويم */
+}
+
+.main-nav ul li a.active {
+    background-color: #1a7e31; /* لون فستقي أغمق للرابط النشط */
+    color: #FFD700; /* نص ذهبي للرابط النشط */
+    box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.4); /* ظل داخلي للرابط النشط */
+}
+
+/* Main Content Area (منطقة المحتوى الرئيسي) */
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto; /* زيادة الهامش العلوي */
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 12px; /* حواف دائرية أكبر */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12); /* ظل أقوى */
+    transform: translateY(0); /* للمساعدة في الحركات الأولية */
+    transition: transform 0.5s ease-out; /* حركة عند تحميل الصفحة */
+    opacity: 1;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 30px; /* زيادة المساحة الداخلية */
+    background-color: #E6FFE6;
+    border-radius: 10px;
+    border: 1px solid #BCEEBC; /* حدود أوضح */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.hero-section h2 {
+    color: #28a745;
+    font-size: 2.8em; /* تكبير الخط */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.hero-section p {
+    font-size: 1.2em; /* تكبير الخط */
+    color: #555;
+    line-height: 1.8;
+}
+
+
+/* Footer Styling (تنسيقات تذييل الصفحة) */
+.main-footer {
+    background-color: #1A1A1A;
+    color: #FFD700;
+    padding: 18px 25px; /* زيادة المساحة الداخلية */
+    text-align: right;
+    margin-top: 50px; /* زيادة الهامش العلوي */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* ظل أقوى */
+    border-top-left-radius: 8px; /* حواف دائرية علوية */
+    border-top-right-radius: 8px;
+}
+
+.main-footer .designer-info {
+    margin: 0;
+    font-size: 1em; /* تكبير الخط قليلاً */
+    color: #D4AF37;
+    transition: color 0.3s ease;
+}
+.main-footer .designer-info:hover {
+    color: #FFD700; /* تغيير اللون عند التحويم */
+}
+
+
+/* Units Overview Page Styling (تنسيقات صفحة الوحدات) */
+.units-container {
+    margin-top: 30px;
+}
+
+.main-content > h2 { /* استهداف العنوان المباشر للمحتوى الرئيسي */
+    color: #28a745;
+    font-size: 2.5em; /* تكبير الخط */
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.main-content > p { /* استهداف الفقرة المباشرة للمحتوى الرئيسي */
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 1.15em;
+}
+
+/* Styling for the dropdown units (details/summary) */
+.unit-dropdown {
+    background-color: #F8F8F8;
+    border: 1px solid #e0e0e0; /* حدود أفتح قليلاً */
+    border-radius: 10px; /* حواف دائرية أكبر */
+    margin-bottom: 20px; /* زيادة المسافة بين الوحدات */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* ظل أقوى */
+    transition: all 0.4s ease-in-out; /* انتقال أكثر سلاسة لكل شيء */
+    overflow: hidden; /* لإخفاء أي محتوى يتجاوز الحدود الدائرية */
+}
+
+.unit-dropdown[open] {
+    background-color: #FFFBE6; /* لون ذهبي أفتح جداً عند الفتح */
+    border-color: #FFD700; /* حدود ذهبية عند الفتح */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* ظل أقوى عند الفتح */
+    transform: translateY(-5px); /* رفع بسيط عند الفتح */
+}
+
+.unit-title {
+    display: block;
+    padding: 20px 30px; /* زيادة المساحة الداخلية */
+    font-size: 1.8em; /* حجم أكبر لعنوان الوحدة */
+    font-weight: bold;
+    color: #28a745;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 10px; /* تطبيق حواف دائرية */
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05); /* ظل نص خفيف */
+}
+
+.unit-title:hover {
+    background-color: #DBF0DF; /* فستقي فاتح عند التحويم */
+    color: #1e8d35; /* فستقي أغمق عند التحويم */
+    transform: scale(1.005); /* تكبير بسيط جداً عند التحويم */
+}
+
+/* تحسين أيقونة السهم لتبدو أكثر احترافية */
+.unit-title::-webkit-details-marker {
+    display: none;
+}
+.unit-title::after {
+    content: '▼'; /* رمز سهم للأسفل (لإظهار أنه يمكن فتحه) */
+    position: absolute;
+    left: 25px; /* مسافة من اليسار */
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg); /* تدوير السهم ليصبح لليمين في الوضع الافتراضي */
+    transition: transform 0.3s ease;
+    color: #FFD700;
+    font-size: 0.9em; /* حجم أكبر للسهم */
+    font-weight: bold;
+}
+
+.unit-dropdown[open] > .unit-title::after {
+    transform: translateY(-50%) rotate(0deg); /* تدوير السهم ليصبح للأسفل عند الفتح */
+}
+
+/* Styling for the topic list (القائمة المنسدلة للمواضيع) */
+.topic-list {
+    list-style: none;
+    padding: 15px 0 15px 50px; /* زيادة المسافة الداخلية من اليسار */
+    margin: 0;
+    border-top: 1px solid #f0f0f0; /* خط فاصل أفتح */
+    background-color: #FDFDFD;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* إضافة تأثير بسيط عند الظهور */
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+}
+
+.unit-dropdown:not([open]) .topic-list {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: none;
+}
+
+
+.topic-list li {
+    padding: 0;
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+.topic-list li:last-child {
+    border-bottom: none;
+}
+
+.topic-list li a {
+    text-decoration: none;
+    color: #333; /* لون نص أساسي قوي وواضح */
+    font-size: 1.2em; /* حوالي 19.2px إذا كان base font هو 16px */
+    font-weight: bold; /* جعل الخط بولد كما طلبت */
+    display: block;
+    padding: 15px 25px; /* مساحة داخلية كبيرة ومريحة للنقر */
+    border-radius: 8px; /* حواف دائرية للأزرار */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.4s ease, background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تأثير تعبئة الخلفية عند التحويم */
+.topic-list li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #e0f2e0; /* لون فستقي فاتح للخلفية المعبأة */
+    z-index: -1;
+    transition: width 0.4s ease-out;
+    border-radius: 8px;
+}
+
+.topic-list li a:hover {
+    color: #FFD700;
+    transform: translateX(10px) scale(1.01);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.topic-list li a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+
+/* Lesson Page Specific Styling (تنسيقات خاصة لصفحات الدروس) */
+.main-content.lesson-page {
+    padding: 40px;
+    text-align: justify;
+}
+
+.lesson-page h2 {
+    color: #28a745;
+    font-size: 2.8em; /* حجم العنوان الرئيسي في صفحة الدرس */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.lesson-intro {
+    font-size: 1.3em; /* حجم أكبر لمقدمة الدرس */
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    font-weight: bold; /* بولد لمقدمة الدرس */
+}
+
+.lesson-section {
+    background-color: #FDFDFD;
+    border: 1px solid #e9e9e9;
+    border-radius: 10px;
+    padding: 35px; /* زيادة Padding */
+    margin-bottom: 40px; /* زيادة المسافة بين الأقسام */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* ظل أقوى */
+}
+
+.lesson-section h3 {
+    color: #1a7e31; /* لون فستقي أغمق وأكثر قوة */
+    font-size: 2.2em; /* زيادة حجم عناوين الأقسام الفرعية */
+    font-weight: bold; /* بولد للعناوين الفرعية */
+    margin-top: 0;
+    margin-bottom: 28px; /* مسافة أكبر تحت العنوان */
+    text-align: center;
+    border-bottom: 3px solid #DDF4DF; /* خط أكثر سمكاً وأغمق تحت العنوان */
+    padding-bottom: 18px; /* مسافة تحت الخط */
+    position: relative;
+}
+.lesson-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; /* لتوسيط الخط الذهبي تحت الخط الفستقي */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* خط ذهبي أطول */
+    height: 3px; /* خط ذهبي أكثر سمكاً */
+    background-color: #FFD700;
+    border-radius: 3px;
+    box-shadow: 0 1px 5px rgba(255, 215, 0, 0.4); /* ظل خفيف للخط الذهبي */
+}
+
+
+/* Quran Text Styling (تنسيق نص القرآن الكريم) */
+.quran-text {
+    font-family: 'Traditional Arabic', 'Amiri', serif;
+    font-size: 1.8em; /* زيادة كبيرة في حجم الخط */
+    line-height: 2.8; /* مسافة بين الأسطر للقراءة المريحة جداً */
+    text-align: center;
+    background-color: #FAFFF8;
+    border: 2px dashed #C0E9C0; /* حدود أكثر سمكاً ووضوحاً */
+    padding: 30px; /* زيادة Padding */
+    border-radius: 10px;
+    margin-bottom: 35px;
+    box-shadow: inset 0 0 15px rgba(40, 167, 69, 0.1); /* ظل داخلي أقوى */
+}
+.quran-text p {
+    margin-bottom: 15px; /* مسافة أكبر بين الآيات */
+    color: #0c5c2a; /* لون فستقي داكن جداً ومميز */
+    font-weight: bold; /* بولد لنص القرآن الكريم */
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.03); /* ظل نص خفيف جداً */
+}
+
+/* Meaning Table Styling (تنسيق جدول معاني المفردات) */
+.meaning-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 35px; /* زيادة Margin */
+    margin-bottom: 35px;
+    font-size: 1.25em; /* **16px** (1.25em * 16px = 20px), سيكون الخطوط الداخلية للجدول بهذا الحجم */
+    border-radius: 10px; /* حواف دائرية أكبر */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* ظل أقوى للجدول */
+}
+
+.meaning-table th, .meaning-table td {
+    border: 1px solid #c9c9c9; /* حدود أغمق وأوضح */
+    padding: 15px 18px; /* زيادة Padding */
+    text-align: center;
+    color: #444; /* لون نص داكن وواضح */
+    font-weight: bold; /* بولد لكلمات الجدول (الكلمة ومعناها) */
+}
+
+.meaning-table th {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4em; /* حجم أكبر لرؤوس الجدول */
+}
+
+.meaning-table tr:nth-child(even) {
+    background-color: #f2fdf2; /* خلفية أفتح وأكثر حيوية للصفوف الزوجية */
+}
+
+.meaning-table tr:hover {
+    background-color: #dffbe2; /* فستقي فاتح جداً وبارز عند التحويم */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    transform: scale(1.005); /* تكبير طفيف للصف عند التحويم */
+}
+
+/* Discussion Content Styling (تنسيق قسم المناقشة) */
+.discussion-content p {
+    margin-bottom: 22px; /* مسافة أكبر بين الفقرات */
+    font-size: 1.25em; /* **16px** (1.25em * 16px = 20px)، حجم الخط لأجوبة المناقشة */
+    line-height: 1.9; /* مسافة بين الأسطر مريحة */
+    color: #333; /* لون نص داكن وواضح */
+    font-weight: bold; /* بولد لأجوبة المناقشة */
+}
+
+.discussion-content p strong {
+    color: #DAA520; /* لون ذهبي أغمق وأقوى للأسئلة */
+    font-size: 1.4em; /* حجم أكبر للأسئلة */
+    display: block;
+    margin-bottom: 10px; /* مسافة أكبر تحت السؤال */
+    font-weight: bold; /* بولد للأسئلة */
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05); /* ظل نص خفيف */
+}
+
+/* Lesson Author & Navigation Styling (تنسيق معلومات المؤلف وأزرار التنقل) */
+.lesson-author {
+    text-align: center;
+    margin-top: 50px; /* زيادة Margin */
+    margin-bottom: 40px;
+    font-size: 1.2em; /* حجم أكبر لنص المؤلف */
+    color: #555;
+    font-weight: bold; /* بولد لنص المؤلف */
+}
+.lesson-author p {
+    margin: 0;
+    padding: 12px 25px;
+    background-color: #E6FFE6; /* خلفية فستقية خفيفة */
+    border-radius: 30px; /* حواف دائرية أكثر */
+    display: inline-block;
+    border: 2px solid #C5E9C5; /* حدود أكثر سمكاً ووضوحاً */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.lesson-navigation {
+    text-align: center;
+    margin-top: 60px; /* زيادة Margin */
+    padding-top: 40px; /* زيادة Padding */
+    border-top: 2px dashed #d5d5d5; /* خط فاصل أكثر سمكاً */
+}
+
+.lesson-navigation a {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 18px 35px; /* زيادة Padding للأزرار */
+    border-radius: 35px; /* حواف دائرية جداً */
+    text-decoration: none;
+    font-size: 1.25em; /* زيادة حجم الخط في الأزرار */
+    font-weight: bold;
+    margin: 0 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* ظل أقوى */
+}
+
+.lesson-navigation a:hover {
+    background-color: #218838;
+    transform: translateY(-5px); /* رفع أكثر وضوحاً */
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3); /* ظل أكثر قوة */
+}
+
+/* Responsive Design for Lesson Page */
+@media (max-width: 1024px) {
+    .main-content.lesson-page {
+        padding: 30px;
+    }
+    .lesson-page h2 {
+        font-size: 2.5em;
+    }
+    .lesson-section {
+        padding: 25px;
+    }
+    .lesson-section h3 {
+        font-size: 2em;
+        padding-bottom: 15px;
+    }
+    .quran-text {
+        font-size: 1.7em;
+        line-height: 2.6;
+        padding: 25px;
+    }
+    .meaning-table {
+        font-size: 1.2em; /* تقليل حجم الخط قليلاً للاستجابة */
+    }
+    .meaning-table th, .meaning-table td {
+        padding: 12px 15px;
+    }
+    .discussion-content p {
+        font-size: 1.2em; /* تقليل حجم الخط قليلاً للاستجابة */
+    }
+    .discussion-content p strong {
+        font-size: 1.3em;
+    }
+    .lesson-navigation a {
+        padding: 15px 30px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content.lesson-page {
+        padding: 20px;
+    }
+    .lesson-page h2 {
+        font-size: 2.2em;
+    }
+    .lesson-section {
+        padding: 20px;
+    }
+    .lesson-section h3 {
+        font-size: 1.8em;
+        padding-bottom: 12px;
+    }
+    .quran-text {
+        font-size: 1.5em;
+        line-height: 2.4;
+        padding: 20px;
+    }
+    .meaning-table {
+        font-size: 1.1em; /* تقليل حجم الخط للاستجابة */
+    }
+    .meaning-table th, .meaning-table td {
+        padding: 10px 12px;
+    }
+    .discussion-content p {
+        font-size: 1.1em; /* تقليل حجم الخط للاستجابة */
+    }
+    .discussion-content p strong {
+        font-size: 1.2em;
+    }
+    .lesson-navigation a {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content.lesson-page {
+        padding: 15px;
+    }
+    .lesson-page h2 {
+        font-size: 1.8em;
+    }
+    .lesson-intro {
+        font-size: 1.1em;
+    }
+    .lesson-section h3 {
+        font-size: 1.5em;
+    }
+    .quran-text {
+        font-size: 1.3em;
+        line-height: 2.2;
+        padding: 15px;
+    }
+    .meaning-table {
+        font-size: 1em; /* تقليل حجم الخط للاستجابة */
+    }
+    .meaning-table th, .meaning-table td {
+        padding: 8px 10px;
+    }
+    .discussion-content p {
+        font-size: 1em; /* تقليل حجم الخط للاستجابة */
+    }
+    .discussion-content p strong {
+        font-size: 1.1em;
+    }
+}

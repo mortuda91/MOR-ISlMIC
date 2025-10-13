@@ -1,0 +1,594 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تمرين: آداب المزاح الإسلامية - منصة المبدأ التعليمية</title>
+    <link rel="stylesheet" href="../../css/style.css"> <style>
+        /* أنماط إضافية خاصة بهذه الصفحة فقط إذا لزم الأمر، دون تكرار الأنماط الموجودة في style.css */
+        .activity-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f9f9f9; /* يمكن تعديلها لتتناسب مع تصميمك العام */
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: right;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .question-text {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #34495E;
+            font-weight: bold;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #eee;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: 2px solid transparent; /* Border for feedback */
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        .options input[type="radio"] {
+            margin-left: 10px;
+            transform: scale(1.2);
+        }
+        .submit-button {
+            display: block;
+            width: 220px;
+            padding: 15px;
+            margin: 30px auto 0;
+            background-color: #2ECC71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        .submit-button:hover {
+            background-color: #27AE60;
+        }
+        .results-summary {
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 2px solid #3498DB;
+            background-color: #e9f5ff;
+            border-radius: 8px;
+            text-align: center;
+            display: none; /* Hidden initially */
+        }
+        .results-summary h3 {
+            color: #34495E;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .results-summary p {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .incorrect-questions-list {
+            margin-top: 20px;
+            border-top: 1px dashed #A9CCE3;
+            padding-top: 15px;
+            text-align: right;
+        }
+        .incorrect-questions-list h4 {
+            color: #E74C3C;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .incorrect-questions-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .incorrect-questions-list li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.5;
+        }
+        .correct-answer-highlight {
+            border: 2px solid #28a745 !important;
+            background-color: #d4edda !important;
+        }
+        .incorrect-answer-highlight {
+            border: 2px solid #dc3545 !important;
+            background-color: #f8d7da !important;
+        }
+        .correct-choice-feedback {
+            font-size: 0.9em;
+            color: #28a745;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+        .explanation-feedback {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+        /* أنماط التنقل بين الدروس */
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .lesson-navigation a {
+            padding: 12px 25px;
+            background-color: #3498DB;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+        .lesson-navigation a:hover {
+            background-color: #2980B9;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-left">
+                <p>مدرسة المبدأ الابتدائية المختلطة</p>
+            </div>
+            <div class="header-center">
+                <h1>منصة المبدأ التعليمية</h1>
+                <p class="tagline">المنصة مخصصة لمادة التربية الإسلامية للصف الخامس الابتدائي</p>
+            </div>
+            <div class="header-right">
+                <p>مديرية تربية الرصافة الثالثة</p>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html">الرئيسية</a></li>
+                <li><a href="../../units_overview.html">وحدات المادة</a></li>
+                <li><a href="../../videos.html">الفيديوهات</a></li>
+                <li><a href="../../activities.html" class="active">تمارين تفاعلية</a></li>
+                <li><a href="../../about.html">من نحن</a></li>
+                <li><a href="../../contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content lesson-page">
+        <h2>تمرين الوحدة الأولى - الدرس الخامس: آداب المزاح الإسلامية</h2>
+
+        <div class="activity-container">
+            <form id="quizForm">
+                <div class="question-box">
+                    <div class="question-text">1. ما هو المزاح الجميل والمحبب بين الإخوة والأصدقاء؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q1" value="a"> هو المزاح الذي يكون فيه أذى للآخرين.
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="b"> هو المزاح الذي لا يكون فيه شتيمة أو غيبة أو إساءة لأحد.
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="c"> هو المزاح الذي يتضمن السخرية من شكل الناس أو أصواتهم.
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="d"> هو المزاح الذي يؤدي إلى جرح مشاعر الآخرين.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">2. ما هي إحدى فوائد المزاح المحبب؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q2" value="a"> يقلل من قيمة الإنسان واحترامه بين الناس.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="b"> يزيد من القلق والتوتر.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="c"> يلطف الأجواء ويدخل الفرح والسرور إلى قلوب الآخرين.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="d"> يسبب العداوة والبغضاء بين الناس.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">3. متى يصبح المزاح مكروهاً وقبيحاً ويحاسبنا الله عليه؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q3" value="a"> عندما يلطف الأجواء ويزيل القلق.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="b"> عندما لا يتضمن سخرية أو استخفافاً بأحد.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="c"> إذا فقد أحد الشروط مثل عدم وجود أذى أو شتيمة.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="d"> عندما يدخل الفرح إلى قلوب الآخرين.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">4. لماذا لا يُستحب الإكثار من المزاح؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q4" value="a"> لأنه يقلل من قيمة الإنسان واحترامه.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="b"> لأنه يساعد على قضاء الحوائج.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="c"> لأنه يزيل الأحزان.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="d"> لأنه يُدخل السرور إلى القلوب.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">5. ماذا قال الرسول محمد صلى الله عليه وسلم عن الابتسامة في وجه الأخ؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q5" value="a"> ابتسامتك في وجه أخيك ضرر.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="b"> تبسمك في وجه أخيك صدقة.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="c"> التبسم لا يدخل السرور.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="d"> تبسمك في وجه أخيك نفاق.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">6. لماذا لا يجوز ترويع الإخوة والأصدقاء وإخافتهم بحجة المزاح؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q6" value="a"> لأن ذلك يزيد من قيمة المزاح.
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="b"> لأن أذى الناس حرام، وإخافتهم معصية لله.
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="c"> لأن ذلك يلطف الأجواء ويزيل القلق.
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="d"> لأن المزاح يجب أن يكون فيه شتيمة وغيبة.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">7. ما هو أشد أنواع المزاح معصية لله؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q7" value="a"> المزاح الذي لا يتضمن السخرية.
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="b"> المزاح الذي لا يجرح المشاعر.
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="c"> السخرية من شكل الناس أو هيئاتهم بحجة المزاح.
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="d"> المزاح الذي يدخل الفرح إلى قلوب الآخرين.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">8. ماذا يحدث إذا زاد الشيء عن حده؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q8" value="a"> يقلل من قيمة الإنسان فقط.
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="b"> ينقلب إلى ضده.
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="c"> يزيد من محبة الناس واحترامهم.
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="d"> يصبح صدقة.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">9. ماذا يجب على الإنسان أن يعرف بخصوص المزاح؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q9" value="a"> أنه لا توجد حدود للمزاح.
+                        </label>
+                        <label>
+                            <input type="radio" name="q9" value="b"> أنه يجب المزاح في كل وقت ومع أي شخص.
+                        </label>
+                        <label>
+                            <input type="radio" name="q9" value="c"> متى نمزح ومع من نمزح وكيف نمزح وأن يكون ذلك بحدود.
+                        </label>
+                        <label>
+                            <input type="radio" name="q9" value="d"> أن المزاح يجب أن يؤذي الآخرين ليُعتبر ممتعاً.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">10. ما هو المزاح القاسي الذي يجب الحذر منه؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q10" value="a"> المزاح الذي فيه لطف وسرور.
+                        </label>
+                        <label>
+                            <input type="radio" name="q10" value="b"> المزاح الذي يتضمن خطرًا، أو خبرًا كاذبًا، أو إخفاء شيء مهم جدًا.
+                        </label>
+                        <label>
+                            <input type="radio" name="q10" value="c"> المزاح الذي يدخل الفرح إلى قلب الآخر.
+                        </label>
+                        <label>
+                            <input type="radio" name="q10" value="d"> المزاح الذي يزيل الهموم والأحزان.
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">إرسال الإجابات</button>
+            </form>
+
+            <div id="results-summary" class="results-summary">
+                <h3>نتائجك</h3>
+                <p>عدد الإجابات الصحيحة: <span id="correct-count">0</span> من <span id="total-questions-summary">0</span></p>
+                <p>عدد الإجابات الخاطئة: <span id="incorrect-count">0</span></p>
+                <div id="incorrect-questions-list" class="incorrect-questions-list">
+                    <h4>الأسئلة التي أخطأت فيها:</h4>
+                    <ul>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="lesson-navigation">
+            <a href="../../units/unit1/topic5.html">العودة لدرس آداب المزاح</a> <a href="../../activities.html">العودة لفهرس التمارين</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p class="designer-info">إعداد وتصميم: مرتضى الخفاجي</p>
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                question: "1. ما هو المزاح الجميل والمحبب بين الإخوة والأصدقاء؟",
+                options: {
+                    a: "هو المزاح الذي يكون فيه أذى للآخرين.",
+                    b: "هو المزاح الذي لا يكون فيه شتيمة أو غيبة أو إساءة لأحد.",
+                    c: "هو المزاح الذي يتضمن السخرية من شكل الناس أو أصواتهم.",
+                    d: "هو المزاح الذي يؤدي إلى جرح مشاعر الآخرين."
+                },
+                answer: "b",
+                explanation: "المزاح المحبب هو الذي يخلو من الأذى اللفظي والمعنوي للآخرين، ولا يتضمن شتيمة أو غيبة أو إساءة لأحد."
+            },
+            {
+                question: "2. ما هي إحدى فوائد المزاح المحبب؟",
+                options: {
+                    a: "يقلل من قيمة الإنسان واحترامه بين الناس.",
+                    b: "يزيد من القلق والتوتر.",
+                    c: "يلطف الأجواء ويدخل الفرح والسرور إلى قلوب الآخرين.",
+                    d: "يسبب العداوة والبغضاء بين الناس."
+                },
+                answer: "c",
+                explanation: "المزاح المحبب يلطف الأجواء ويدخل الفرح والسرور إلى قلوب الآخرين، ويزيل القلق والتوتر."
+            },
+            {
+                question: "3. متى يصبح المزاح مكروهاً وقبيحاً ويحاسبنا الله عليه؟",
+                options: {
+                    a: "عندما يلطف الأجواء ويزيل القلق.",
+                    b: "عندما لا يتضمن سخرية أو استخفافاً بأحد.",
+                    c: "إذا فقد أحد الشروط مثل عدم وجود أذى أو شتيمة.",
+                    d: "عندما يدخل الفرح إلى قلوب الآخرين."
+                },
+                answer: "c",
+                explanation: "يصبح المزاح مكروهاً وقبيحاً إذا فقد أحد شروطه، مثل أن يتضمن شتيمة أو غيبة أو أذى للآخرين."
+            },
+            {
+                question: "4. لماذا لا يُستحب الإكثار من المزاح؟",
+                options: {
+                    a: "لأنه يقلل من قيمة الإنسان واحترامه.",
+                    b: "لأنه يساعد على قضاء الحوائج.",
+                    c: "لأنه يزيل الأحزان.",
+                    d: "لأنه يُدخل السرور إلى القلوب."
+                },
+                answer: "a",
+                explanation: "الإكثار من المزاح غير المحبب يقلل من قيمة الإنسان واحترامه بين الناس، وقد يؤدي إلى جرح المشاعر."
+            },
+            {
+                question: "5. ماذا قال الرسول محمد صلى الله عليه وسلم عن الابتسامة في وجه الأخ؟",
+                options: {
+                    a: "ابتسامتك في وجه أخيك ضرر.",
+                    b: "تبسمك في وجه أخيك صدقة.",
+                    c: "التبسم لا يدخل السرور.",
+                    d: "تبسمك في وجه أخيك نفاق."
+                },
+                answer: "b",
+                explanation: "الرسول محمد صلى الله عليه وسلم قال: 'تبسمك في وجه أخيك صدقة'، مما يدل على قيمة الابتسامة في الإسلام."
+            },
+            {
+                question: "6. لماذا لا يجوز ترويع الإخوة والأصدقاء وإخافتهم بحجة المزاح؟",
+                options: {
+                    a: "لأن ذلك يزيد من قيمة المزاح.",
+                    b: "لأن أذى الناس حرام، وإخافتهم معصية لله.",
+                    c: "لأن ذلك يلطف الأجواء ويزيل القلق.",
+                    d: "لأن المزاح يجب أن يكون فيه شتيمة وغيبة."
+                },
+                answer: "b",
+                explanation: "أذى الناس حرام، وإخافتهم معصية لله تعالى، والمزاح يجب أن يكون خالياً من أي أذى أو ترويع."
+            },
+            {
+                question: "7. ما هو أشد أنواع المزاح معصية لله؟",
+                options: {
+                    a: "المزاح الذي لا يتضمن السخرية.",
+                    b: "المزاح الذي لا يجرح المشاعر.",
+                    c: "السخرية من شكل الناس أو هيئاتهم بحجة المزاح.",
+                    d: "المزاح الذي يدخل الفرح إلى قلوب الآخرين."
+                },
+                answer: "c",
+                explanation: "السخرية من شكل الناس أو هيئاتهم بحجة المزاح هو أشد أنواع المزاح معصية لله، لأنها تتعلق بخلق الله الذي ليس للإنسان دخل فيه."
+            },
+            {
+                question: "8. ماذا يحدث إذا زاد الشيء عن حده؟",
+                options: {
+                    a: "يقلل من قيمة الإنسان فقط.",
+                    b: "ينقلب إلى ضده.",
+                    c: "يزيد من محبة الناس واحترامهم.",
+                    d: "يصبح صدقة."
+                },
+                answer: "b",
+                explanation: "القاعدة العامة تقول: 'ما زاد عن حده انقلب إلى ضده'، وهذا ينطبق على المزاح أيضاً، فالإكثار منه أو تجاوز حدوده يجعله ضاراً."
+            },
+            {
+                question: "9. ماذا يجب على الإنسان أن يعرف بخصوص المزاح؟",
+                options: {
+                    a: "أنه لا توجد حدود للمزاح.",
+                    b: "أنه يجب المزاح في كل وقت ومع أي شخص.",
+                    c: "متى نمزح ومع من نمزح وكيف نمزح وأن يكون ذلك بحدود.",
+                    d: "أن المزاح يجب أن يؤذي الآخرين ليُعتبر ممتعاً."
+                },
+                answer: "c",
+                explanation: "يجب على الإنسان أن يعرف متى يمزح ومع من يمزح وكيف يمزح، وأن يكون ذلك بحدود معينة لا تتجاوز الأدب والأخلاق الإسلامية."
+            },
+            {
+                question: "10. ما هو المزاح القاسي الذي يجب الحذر منه؟",
+                options: {
+                    a: "المزاح الذي فيه لطف وسرور.",
+                    b: "المزاح الذي يتضمن خطرًا، أو خبرًا كاذبًا، أو إخفاء شيء مهم جدًا.",
+                    c: "المزاح الذي يدخل الفرح إلى قلب الآخر.",
+                    d: "المزاح الذي يزيل الهموم والأحزان."
+                },
+                answer: "b",
+                explanation: "المزاح القاسي هو الذي يتضمن خطرًا أو خبرًا كاذبًا أو إخفاء شيء مهم جدًا، مما يسبب الضرر أو الخوف أو سوء الفهم."
+            }
+        ];
+
+        const quizForm = document.getElementById('quizForm');
+        const resultsSummaryDiv = document.getElementById('results-summary');
+        const correctCountSpan = document.getElementById('correct-count');
+        const incorrectCountSpan = document.getElementById('incorrect-count');
+        const totalQuestionsSummarySpan = document.getElementById('total-questions-summary');
+        const incorrectQuestionsList = document.querySelector('#incorrect-questions-list ul');
+
+        // Set total questions count in summary
+        totalQuestionsSummarySpan.textContent = questions.length;
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let correctAnswers = 0;
+            let incorrectAnswers = 0;
+            const incorrectQuestionNumbers = [];
+            incorrectQuestionsList.innerHTML = ''; // Clear previous list
+
+            questions.forEach((qData, index) => {
+                const questionNumber = index + 1;
+                const selectedOptionInput = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+                const questionBox = document.querySelectorAll('.question-box')[index]; // Get the specific question box
+
+                // Clear previous highlights
+                const allLabels = questionBox.querySelectorAll('label');
+                allLabels.forEach(label => {
+                    label.classList.remove('correct-answer-highlight', 'incorrect-answer-highlight');
+                    // Remove previous feedback elements if any
+                    const oldFeedback = label.querySelector('.correct-choice-feedback, .explanation-feedback');
+                    if (oldFeedback) oldFeedback.remove();
+                });
+
+                if (selectedOptionInput) {
+                    const selectedValue = selectedOptionInput.value;
+                    const correctAnswerKey = qData.answer;
+
+                    if (selectedValue === correctAnswerKey) {
+                        correctAnswers++;
+                        // Highlight correct chosen option
+                        selectedOptionInput.closest('label').classList.add('correct-answer-highlight');
+                    } else {
+                        incorrectAnswers++;
+                        incorrectQuestionNumbers.push(questionNumber);
+                        // Highlight incorrect chosen option
+                        selectedOptionInput.closest('label').classList.add('incorrect-answer-highlight');
+                        // Highlight the actual correct option
+                        const actualCorrectLabel = questionBox.querySelector(`input[value="${correctAnswerKey}"]`).closest('label');
+                        actualCorrectLabel.classList.add('correct-answer-highlight');
+
+                        // Add explanation to the selected incorrect label or near it
+                        const explanationElement = document.createElement('div');
+                        explanationElement.classList.add('explanation-feedback');
+                        explanationElement.textContent = qData.explanation + (qData.citation ? ' ' + qData.citation : '');
+                        selectedOptionInput.closest('label').appendChild(explanationElement);
+                    }
+                } else {
+                    // If no option selected, count as incorrect
+                    incorrectAnswers++;
+                    incorrectQuestionNumbers.push(questionNumber);
+
+                    // Highlight the actual correct option
+                    const correctAnswerKey = qData.answer;
+                    const actualCorrectLabel = questionBox.querySelector(`input[value="${correctAnswerKey}"]`).closest('label');
+                    actualCorrectLabel.classList.add('correct-answer-highlight');
+
+                    // Add explanation for not selecting
+                    const explanationElement = document.createElement('div');
+                    explanationElement.classList.add('explanation-feedback');
+                    explanationElement.textContent = `لم يتم اختيار إجابة لهذا السؤال. ${qData.explanation}` + (qData.citation ? ' ' + qData.citation : '');
+                    questionBox.querySelector('.options').appendChild(explanationElement); // Append to options container
+                }
+            });
+
+            // Update summary
+            correctCountSpan.textContent = correctAnswers;
+            incorrectCountSpan.textContent = incorrectAnswers;
+
+            if (incorrectQuestionNumbers.length > 0) {
+                incorrectQuestionNumbers.forEach(qNum => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `السؤال رقم ${qNum}: ${questions[qNum - 1].question}`;
+                    incorrectQuestionsList.appendChild(listItem);
+                });
+                document.getElementById('incorrect-questions-list').style.display = 'block'; // Show the list header
+            } else {
+                document.getElementById('incorrect-questions-list').style.display = 'none'; // Hide if all correct
+            }
+
+            resultsSummaryDiv.style.display = 'block'; // Show the summary section
+            window.scrollTo(0, document.body.scrollHeight); // Scroll to the results
+        });
+    </script>
+</body>
+</html>

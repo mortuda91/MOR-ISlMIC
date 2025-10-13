@@ -1,0 +1,517 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تمرين: سورة الملك - منصة المبدأ التعليمية</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        /* أنماط خاصة بصفحة التمرين */
+        .activity-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: right;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .question-text {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #34495E;
+            font-weight: bold;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #eee;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: 2px solid transparent; /* Border for feedback */
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        .options input[type="radio"] {
+            margin-left: 10px;
+            transform: scale(1.2);
+        }
+        .submit-button {
+            display: block;
+            width: 220px;
+            padding: 15px;
+            margin: 30px auto 0;
+            background-color: #2ECC71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        .submit-button:hover {
+            background-color: #27AE60;
+        }
+        .results-summary {
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 2px solid #3498DB;
+            background-color: #e9f5ff;
+            border-radius: 8px;
+            text-align: center;
+            display: none; /* Hidden initially */
+        }
+        .results-summary h3 {
+            color: #34495E;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .results-summary p {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .incorrect-questions-list {
+            margin-top: 20px;
+            border-top: 1px dashed #A9CCE3;
+            padding-top: 15px;
+            text-align: right;
+        }
+        .incorrect-questions-list h4 {
+            color: #E74C3C;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .incorrect-questions-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .incorrect-questions-list li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.5;
+        }
+        .correct-answer-highlight {
+            border: 2px solid #28a745 !important;
+            background-color: #d4edda !important;
+        }
+        .incorrect-answer-highlight {
+            border: 2px solid #dc3545 !important;
+            background-color: #f8d7da !important;
+        }
+        .correct-choice-feedback {
+            font-size: 0.9em;
+            color: #28a745;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+        .explanation-feedback {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-left">
+                <p>مدرسة المبدأ الابتدائية المختلطة</p>
+            </div>
+            <div class="header-center">
+                <h1>منصة المبدأ التعليمية</h1>
+                <p class="tagline">المنصة مخصصة لمادة التربية الإسلامية للصف الخامس الابتدائي</p>
+            </div>
+            <div class="header-right">
+                <p>مديرية تربية الرصافة الثالثة</p>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html">الرئيسية</a></li>
+                <li><a href="../../units_overview.html">وحدات المادة</a></li>
+                <li><a href="../../videos.html">الفيديوهات</a></li>
+                <li><a href="../../activities.html" class="active">تمارين تفاعلية</a></li>
+                <li><a href="../../about.html">من نحن</a></li>
+                <li><a href="../../contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content lesson-page">
+        <h2>تمرين الوحدة الأولى - الدرس الأول: سورة الملك</h2>
+
+        <div class="activity-container">
+            <form id="quizForm">
+                <div class="question-box">
+                    <div class="question-text">1. بمَ سُميت هذه السورة؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q1" value="a"> سورة الحمد
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="b"> سورة الملك
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="c"> سورة القدر
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="d"> سورة الرحمن
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">2. لماذا سُميت سورة الملك بهذا الاسم؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q2" value="a"> لأنها تتحدث عن قصص الملوك.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="b"> لأنها تُعرّفنا أن كل شيء في العالم هو ملك لله تعالى ويسيره بقدرته ورحمته.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="c"> لأنها تذكر اسم ملك عظيم.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="d"> لتمييزها عن باقي السور.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">3. لماذا خلق الله تعالى الموت والحياة؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q3" value="a"> ليستمتع الناس بالحياة.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="b"> ليختبر الناس ويرى أيهم أحسن عملاً.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="c"> ليعاقب المسيئين.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="d"> ليزيد من عدد المخلوقات.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">4. ما مصابيح السماء التي ذكرت في السورة؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q4" value="a"> الأقمار الصناعية.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="b"> النجوم والكواكب.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="c"> الكشافات الضوئية.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="d"> البرق والرعد.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">5. هل ترى نقصاً أو قصوراً في خلق السماوات؟ وعلى ماذا يدل ذلك؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q5" value="a"> نعم، في بعض الأحيان؛ ويدل على عدم الكمال.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="b"> لا، خلقها الله كاملة في نظامها؛ ويدل ذلك على قدرته العظيمة.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="c"> فقط في السماء الدنيا؛ ويدل على أن الكون ليس مثالياً.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="d"> أحياناً، عندما ينظر الإنسان إليها بسرعة؛ ويدل على الحاجة لتدخل بشري.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">6. لماذا خلق الله تعالى جهنم؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q6" value="a"> ليعيش فيها المؤمنون.
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="b"> مكاناً للراحة.
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="c"> شديدة العذاب يُلقي فيها الكافرون.
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="d"> لتخويف الناس فقط.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">7. ما مصير المؤمنين الذين يخافون ربهم بالغيب ويطيعونه؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q7" value="a"> لهم عذاب جهنم.
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="b"> يختبرهم الله فقط.
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="c"> لهم العفو والمغفرة من الله تعالى ولهم الجنة والنعيم الكبير.
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="d"> لا شيء مذكور لهم.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">8. هل يمكن للإنسان أن يُخفي شيئاً عن الله تعالى؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q8" value="a"> نعم، إذا كان بعيداً عن أعين الناس.
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="b"> لا، الله يعلم كل شيء ظاهر وخفي.
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="c"> فقط الأفكار يمكن إخفاؤها.
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="d"> أحياناً، إذا لم يره أحد.
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">إرسال الإجابات</button>
+            </form>
+
+            <div id="results-summary" class="results-summary">
+                <h3>نتائجك</h3>
+                <p>عدد الإجابات الصحيحة: <span id="correct-count">0</span> من <span id="total-questions-summary">0</span></p>
+                <p>عدد الإجابات الخاطئة: <span id="incorrect-count">0</span></p>
+                <div id="incorrect-questions-list" class="incorrect-questions-list">
+                    <h4>الأسئلة التي أخطأت فيها:</h4>
+                    <ul>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="lesson-navigation">
+            <a href="../../units/unit1/topic1.html">العودة لدرس سورة الملك</a>
+            <a href="../../activities.html">العودة لفهرس التمارين</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p class="designer-info">إعداد وتصميم: مرتضى الخفاجي</p>
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                question: "بمَ سُميت هذه السورة؟",
+                options: {
+                    a: "سورة الحمد",
+                    b: "سورة الملك",
+                    c: "سورة القدر",
+                    d: "سورة الرحمن"
+                },
+                answer: "b",
+                explanation: "سُميت هذه السورة بسورة (الملك)."
+            },
+            {
+                question: "لماذا سُميت سورة الملك بهذا الاسم؟",
+                options: {
+                    a: "لأنها تتحدث عن قصص الملوك.",
+                    b: "لأنها تُعرّفنا أن كل شيء في العالم هو ملك لله تعالى ويسيره بقدرته ورحمته.",
+                    c: "لأنها تذكر اسم ملك عظيم.",
+                    d: "لتمييزها عن باقي السور."
+                },
+                answer: "b",
+                explanation: "سُميت هذه السورة بسورة (الملك)؛ لأنها تُعرفنا أن السماء والشمس والقمر والإنسان والحيوان، وما يحدث في العالم من المطر والعواصف وغير ذلك ... كله ملك الله يُسيّره بقدرته ورحمته."
+            },
+            {
+                question: "لماذا خلق الله تعالى الموت والحياة؟",
+                options: {
+                    a: "ليستمتع الناس بالحياة.",
+                    b: "ليختبر الناس ويرى أيهم أحسن عملاً.",
+                    c: "ليعاقب المسيئين.",
+                    d: "ليزيد من عدد المخلوقات."
+                },
+                answer: "b",
+                explanation: "إن الله تعالى خلق الموت والحياة ليختبر الناس ويرى أيهم يطيعه، فهو صاحب العمل الحسن، وأيهم يعصيه فهو سيئ العمل."
+            },
+            {
+                question: "ما مصابيح السماء التي ذكرت في السورة؟",
+                options: {
+                    a: "الأقمار الصناعية.",
+                    b: "النجوم والكواكب.",
+                    c: "الكشافات الضوئية.",
+                    d: "البرق والرعد."
+                },
+                answer: "b",
+                explanation: "لقد ازدادت السماء جمالاً بالكواكب والنجوم التي تشبه المصابيح."
+            },
+            {
+                question: "هل ترى نقصاً أو قصوراً في خلق السماوات؟ وعلى ماذا يدل ذلك؟",
+                options: {
+                    a: "نعم، في بعض الأحيان؛ ويدل على عدم الكمال.",
+                    b: "لا، خلقها الله كاملة في نظامها؛ ويدل ذلك على قدرته العظيمة.",
+                    c: "فقط في السماء الدنيا؛ ويدل على أن الكون ليس مثالياً.",
+                    d: "أحياناً، عندما ينظر الإنسان إليها بسرعة؛ ويدل على الحاجة لتدخل بشري."
+                },
+                answer: "b",
+                explanation: "إن الله بقدرته خلق سبع سماوات طباقا (طبقات) بعضها فوق بعض، ليس فيها نقص أو قصور، إنها كاملة في نظامها، ويدل ذلك على قدرة الله العظيمة."
+            },
+            {
+                question: "لماذا خلق الله تعالى جهنم؟",
+                options: {
+                    a: "ليعيش فيها المؤمنون.",
+                    b: "مكاناً للراحة.",
+                    c: "شديدة العذاب يُلقي فيها الكافرون.",
+                    d: "لتخويف الناس فقط."
+                },
+                answer: "c",
+                explanation: "إن الله تعالى خلق جهنّم شديدة العذاب، يُلقي فيها الكافرون."
+            },
+            {
+                question: "ما مصير المؤمنين الذين يخافون ربهم بالغيب ويطيعونه؟",
+                options: {
+                    a: "لهم عذاب جهنم.",
+                    b: "يختبرهم الله فقط.",
+                    c: "لهم العفو والمغفرة من الله تعالى ولهم الجنة والنعيم الكبير.",
+                    d: "لا شيء مذكور لهم."
+                },
+                answer: "c",
+                explanation: "أما المؤمنون الذين يخافون الله تعالى، ولا يعصونه بالغيب فلهم العفو والمغفرة من الله تعالى ولهم الجنة والنعيم الكبير."
+            },
+            {
+                question: "هل يمكن للإنسان أن يُخفي شيئاً عن الله تعالى؟",
+                options: {
+                    a: "نعم، إذا كان بعيداً عن أعين الناس.",
+                    b: "لا، الله يعلم كل شيء ظاهر وخفي.",
+                    c: "فقط الأفكار يمكن إخفاؤها.",
+                    d: "أحياناً، إذا لم يره أحد."
+                },
+                answer: "b",
+                explanation: "لا يمكن للإنسان أن يخفي شيئاً عن الله تعالى، فالله يعلم كل شيء ظاهر وخفي."
+            }
+        ];
+
+        const quizForm = document.getElementById('quizForm');
+        const resultsSummaryDiv = document.getElementById('results-summary');
+        const correctCountSpan = document.getElementById('correct-count');
+        const incorrectCountSpan = document.getElementById('incorrect-count');
+        const totalQuestionsSummarySpan = document.getElementById('total-questions-summary');
+        const incorrectQuestionsList = document.querySelector('#incorrect-questions-list ul');
+
+        // Set total questions count in summary
+        totalQuestionsSummarySpan.textContent = questions.length;
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let correctAnswers = 0;
+            let incorrectAnswers = 0;
+            const incorrectQuestionNumbers = [];
+            incorrectQuestionsList.innerHTML = ''; // Clear previous list
+
+            questions.forEach((qData, index) => {
+                const questionNumber = index + 1;
+                const selectedOptionInput = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+                const questionBox = document.querySelectorAll('.question-box')[index]; // Get the specific question box
+
+                // Clear previous highlights
+                const allLabels = questionBox.querySelectorAll('label');
+                allLabels.forEach(label => {
+                    label.classList.remove('correct-answer-highlight', 'incorrect-answer-highlight');
+                    // Remove previous feedback elements if any
+                    const oldFeedback = label.querySelector('.correct-choice-feedback, .explanation-feedback');
+                    if (oldFeedback) oldFeedback.remove();
+                });
+
+                if (selectedOptionInput) {
+                    const selectedValue = selectedOptionInput.value;
+                    const correctAnswerKey = qData.answer;
+
+                    if (selectedValue === correctAnswerKey) {
+                        correctAnswers++;
+                        // Highlight correct chosen option
+                        selectedOptionInput.closest('label').classList.add('correct-answer-highlight');
+                    } else {
+                        incorrectAnswers++;
+                        incorrectQuestionNumbers.push(questionNumber);
+                        // Highlight incorrect chosen option
+                        selectedOptionInput.closest('label').classList.add('incorrect-answer-highlight');
+                        // Highlight the actual correct option
+                        const actualCorrectLabel = questionBox.querySelector(`input[value="${correctAnswerKey}"]`).closest('label');
+                        actualCorrectLabel.classList.add('correct-answer-highlight');
+
+                        // Add explanation to the selected incorrect label or near it
+                        const explanationElement = document.createElement('div');
+                        explanationElement.classList.add('explanation-feedback');
+                        explanationElement.textContent = qData.explanation;
+                        selectedOptionInput.closest('label').appendChild(explanationElement);
+                    }
+                } else {
+                    // If no option selected, count as incorrect
+                    incorrectAnswers++;
+                    incorrectQuestionNumbers.push(questionNumber);
+
+                    // Highlight the actual correct option
+                    const correctAnswerKey = qData.answer;
+                    const actualCorrectLabel = questionBox.querySelector(`input[value="${correctAnswerKey}"]`).closest('label');
+                    actualCorrectLabel.classList.add('correct-answer-highlight');
+
+                    // Add explanation for not selecting
+                    const explanationElement = document.createElement('div');
+                    explanationElement.classList.add('explanation-feedback');
+                    explanationElement.textContent = `لم يتم اختيار إجابة لهذا السؤال. ${qData.explanation}`;
+                    questionBox.querySelector('.options').appendChild(explanationElement); // Append to options container
+                }
+            });
+
+            // Update summary
+            correctCountSpan.textContent = correctAnswers;
+            incorrectCountSpan.textContent = incorrectAnswers;
+
+            if (incorrectQuestionNumbers.length > 0) {
+                incorrectQuestionNumbers.forEach(qNum => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `السؤال رقم ${qNum}: ${questions[qNum - 1].question}`;
+                    incorrectQuestionsList.appendChild(listItem);
+                });
+                document.getElementById('incorrect-questions-list').style.display = 'block'; // Show the list header
+            } else {
+                document.getElementById('incorrect-questions-list').style.display = 'none'; // Hide if all correct
+            }
+
+            resultsSummaryDiv.style.display = 'block'; // Show the summary section
+            window.scrollTo(0, document.body.scrollHeight); // Scroll to the results
+        });
+    </script>
+</body>
+</html>

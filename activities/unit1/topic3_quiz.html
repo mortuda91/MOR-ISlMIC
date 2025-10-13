@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تمرين: الحديث النبوي الشريف (في صفات المؤمن) - منصة المبدأ التعليمية</title>
+    <link rel="stylesheet" href="../../css/style.css"> <style>
+        /* أنماط إضافية خاصة بهذه الصفحة فقط إذا لزم الأمر، دون تكرار الأنماط الموجودة في style.css */
+        .activity-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f9f9f9; /* يمكن تعديلها لتتناسب مع تصميمك العام */
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: right;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .question-text {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #34495E;
+            font-weight: bold;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #eee;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: 2px solid transparent; /* Border for feedback */
+        }
+        .options label:hover {
+            background-color: #e0e0e0;
+        }
+        .options input[type="radio"] {
+            margin-left: 10px;
+            transform: scale(1.2);
+        }
+        .submit-button {
+            display: block;
+            width: 220px;
+            padding: 15px;
+            margin: 30px auto 0;
+            background-color: #2ECC71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        .submit-button:hover {
+            background-color: #27AE60;
+        }
+        .results-summary {
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 2px solid #3498DB;
+            background-color: #e9f5ff;
+            border-radius: 8px;
+            text-align: center;
+            display: none; /* Hidden initially */
+        }
+        .results-summary h3 {
+            color: #34495E;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .results-summary p {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .incorrect-questions-list {
+            margin-top: 20px;
+            border-top: 1px dashed #A9CCE3;
+            padding-top: 15px;
+            text-align: right;
+        }
+        .incorrect-questions-list h4 {
+            color: #E74C3C;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .incorrect-questions-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .incorrect-questions-list li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.5;
+        }
+        .correct-answer-highlight {
+            border: 2px solid #28a745 !important;
+            background-color: #d4edda !important;
+        }
+        .incorrect-answer-highlight {
+            border: 2px solid #dc3545 !important;
+            background-color: #f8d7da !important;
+        }
+        .correct-choice-feedback {
+            font-size: 0.9em;
+            color: #28a745;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+        .explanation-feedback {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+        /* أنماط التنقل بين الدروس */
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .lesson-navigation a {
+            padding: 12px 25px;
+            background-color: #3498DB;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+        .lesson-navigation a:hover {
+            background-color: #2980B9;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-left">
+                <p>مدرسة المبدأ الابتدائية المختلطة</p>
+            </div>
+            <div class="header-center">
+                <h1>منصة المبدأ التعليمية</h1>
+                <p class="tagline">المنصة مخصصة لمادة التربية الإسلامية للصف الخامس الابتدائي</p>
+            </div>
+            <div class="header-right">
+                <p>مديرية تربية الرصافة الثالثة</p>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html">الرئيسية</a></li>
+                <li><a href="../../units_overview.html">وحدات المادة</a></li>
+                <li><a href="../../videos.html">الفيديوهات</a></li>
+                <li><a href="../../activities.html" class="active">تمارين تفاعلية</a></li>
+                <li><a href="../../about.html">من نحن</a></li>
+                <li><a href="../../contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content lesson-page">
+        <h2>تمرين الوحدة الأولى - الدرس الثالث: الحديث النبوي الشريف (في صفات المؤمن)</h2>
+
+        <div class="activity-container">
+            <form id="quizForm">
+                <div class="question-box">
+                    <div class="question-text">1. ماذا تعني عبارة "من سرته حسنته" في الحديث الشريف؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q1" value="a"> أ. يفرح عندما يصاب بمصيبة.
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="b"> ب. يفرح عندما يعمل خيراً أو عملاً صالحاً.
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="c"> ج. يغضب عندما يرى خيراً.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">2. ما معنى "وساءته سيئته" بالنسبة للمؤمن الصادق؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q2" value="a"> أ. يحزن عندما يرتكب ذنباً أو خطأ.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="b"> ب. يفرح عندما يخطئ.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="c"> ج. لا يهتم بأخطائه.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">3. كيف يتصرف المؤمن إذا صدرت عنه مخالفة أو أخطأ؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q3" value="a"> أ. يصر على الخطأ ولا يندم.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="b"> ب. يندم ويستغفر الله ويتوب إليه.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="c"> ج. يلوم الآخرين على أخطائه.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">4. اذكر ثلاثة من صفات المؤمن الأخرى المذكورة في الشرح.</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q4" value="a"> أ. الكذب، الخيانة، الإهمال.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="b"> ب. الصدق، الأمانة، الكسل.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="c"> ج. الصدق، الأمانة، الشجاعة.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">5. ما هو مقياس العمل عند المؤمن؟</div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q5" value="a"> أ. كسب المال.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="b"> ب. مرضاة الله سبحانه.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="c"> ج. إرضاء الناس فقط.
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">إرسال الإجابات</button>
+            </form>
+
+            <div id="results-summary" class="results-summary">
+                <h3>نتائجك</h3>
+                <p>عدد الإجابات الصحيحة: <span id="correct-count">0</span> من <span id="total-questions-summary">0</span></p>
+                <p>عدد الإجابات الخاطئة: <span id="incorrect-count">0</span></p>
+                <div id="incorrect-questions-list" class="incorrect-questions-list">
+                    <h4>الأسئلة التي أخطأت فيها:</h4>
+                    <ul>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="lesson-navigation">
+            <a href="../../units/unit1/topic3.html">العودة لدرس صفات المؤمن</a> <a href="../../activities.html">العودة لفهرس التمارين</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p class="designer-info">إعداد وتصميم: مرتضى الخفاجي</p>
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                question: "1. ماذا تعني عبارة \"من سرته حسنته\" في الحديث الشريف؟",
+                options: {
+                    a: "أ. يفرح عندما يصاب بمصيبة.",
+                    b: "ب. يفرح عندما يعمل خيراً أو عملاً صالحاً.",
+                    c: "ج. يغضب عندما يرى خيراً."
+                },
+                answer: "b",
+                explanation: "المؤمن الصادق يفرح عندما يعمل حسنة، لأنها تقربه من الله وتجلب له السعادة."
+            },
+            {
+                question: "2. ما معنى \"وساءته سيئته\" بالنسبة للمؤمن الصادق؟",
+                options: {
+                    a: "أ. يحزن عندما يرتكب ذنباً أو خطأ.",
+                    b: "ب. يفرح عندما يخطئ.",
+                    c: "ج. لا يهتم بأخطائه."
+                },
+                answer: "a",
+                explanation: "المؤمن الصادق يحزن ويتألم عندما يرتكب ذنباً أو خطأ، ويدفعه ذلك إلى التوبة والاستغفار."
+            },
+            {
+                question: "3. كيف يتصرف المؤمن إذا صدرت عنه مخالفة أو أخطأ؟",
+                options: {
+                    a: "أ. يصر على الخطأ ولا يندم.",
+                    b: "ب. يندم ويستغفر الله ويتوب إليه.",
+                    c: "ج. يلوم الآخرين على أخطائه."
+                },
+                answer: "b",
+                explanation: "من صفات المؤمن التوبة والندم على الخطأ، ويسارع إلى الاستغفار والتوبة إلى الله."
+            },
+            {
+                question: "4. اذكر ثلاثة من صفات المؤمن الأخرى المذكورة في الشرح.",
+                options: {
+                    a: "أ. الكذب، الخيانة، الإهمال.",
+                    b: "ب. الصدق، الأمانة، الكسل.",
+                    c: "ج. الصدق، الأمانة، الشجاعة."
+                },
+                answer: "c",
+                explanation: "يتصف المؤمن بمكارم الأخلاق مثل الصدق، الأمانة، الشجاعة، والكرم وغيرها."
+            },
+            {
+                question: "5. ما هو مقياس العمل عند المؤمن؟",
+                options: {
+                    a: "أ. كسب المال.",
+                    b: "ب. مرضاة الله سبحانه.",
+                    c: "ج. إرضاء الناس فقط."
+                },
+                answer: "b",
+                explanation: "المؤمن الصادق يعمل بنية خالصة لمرضاة الله سبحانه وتعالى، وليس لأي غرض آخر."
+            }
+        ];
+
+        const quizForm = document.getElementById('quizForm');
+        const resultsSummaryDiv = document.getElementById('results-summary');
+        const correctCountSpan = document.getElementById('correct-count');
+        const incorrectCountSpan = document.getElementById('incorrect-count');
+        const totalQuestionsSummarySpan = document.getElementById('total-questions-summary');
+        const incorrectQuestionsList = document.querySelector('#incorrect-questions-list ul');
+
+        // Set total questions count in summary
+        totalQuestionsSummarySpan.textContent = questions.length;
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let correctAnswers = 0;
+            let incorrectAnswers = 0;
+            const incorrectQuestionNumbers = [];
+            incorrectQuestionsList.innerHTML = ''; // Clear previous list
+
+            questions.forEach((qData, index) => {
+                const questionNumber = index + 1;
+                const selectedOptionInput = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+                const questionBox = document.querySelectorAll('.question-box')[index]; // Get the specific question box
+
+                // Clear previous highlights
+                const allLabels = questionBox.querySelectorAll('label');
+                allLabels.forEach(label => {
+                    label.classList.remove('correct-answer-highlight', 'incorrect-answer-highlight');
+                    // Remove previous feedback elements if any
+                    const oldFeedback = label.querySelector('.correct-choice-feedback, .explanation-feedback');
+                    if (oldFeedback) oldFeedback.remove();
+                });
+
+                if (selectedOptionInput) {
+                    const selectedValue = selectedOptionInput.value;
+                    const correctAnswerKey = qData.answer;
+
+                    if (selectedValue === correctAnswerKey) {
+                        correctAnswers++;
+                        // Highlight correct chosen option
+                        selectedOptionInput.closest('label').classList.add('correct-answer-highlight');
+                    } else {
+                        incorrectAnswers++;
+                        incorrectQuestionNumbers.push(questionNumber);
+                        // Highlight incorrect chosen option
+                        selectedOptionInput.closest('label').classList.add('incorrect-answer-highlight');
+                        // Highlight the actual correct option
+                        const actualCorrectLabel = questionBox.querySelector(`input[value="${correctAnswerKey}"]`).closest('label');
+                        actualCorrectLabel.classList.add('correct-answer-highlight');
+
+                        // Add explanation to the selected incorrect label or near it
+                        const explanationElement = document.createElement('div');
+                        explanationElement.classList.add('explanation-feedback');
+                        explanationElement.textContent = qData.explanation + (qData.citation ? ' ' + qData.citation : '');
+                        selectedOptionInput.closest('label').appendChild(explanationElement);
+                    }
+                } else {
+                    // If no option selected, count as incorrect
+                    incorrectAnswers++;
+                    incorrectQuestionNumbers.push(questionNumber);
+
+                    // Highlight the actual correct option
+                    const correctAnswerKey = qData.answer;
+                    const actualCorrectLabel = questionBox.querySelector(`input[value="${correctAnswerKey}"]`).closest('label');
+                    actualCorrectLabel.classList.add('correct-answer-highlight');
+
+                    // Add explanation for not selecting
+                    const explanationElement = document.createElement('div');
+                    explanationElement.classList.add('explanation-feedback');
+                    explanationElement.textContent = `لم يتم اختيار إجابة لهذا السؤال. ${qData.explanation}` + (qData.citation ? ' ' + qData.citation : '');
+                    questionBox.querySelector('.options').appendChild(explanationElement); // Append to options container
+                }
+            });
+
+            // Update summary
+            correctCountSpan.textContent = correctAnswers;
+            incorrectCountSpan.textContent = incorrectAnswers;
+
+            if (incorrectQuestionNumbers.length > 0) {
+                incorrectQuestionNumbers.forEach(qNum => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `السؤال رقم ${qNum}: ${questions[qNum - 1].question}`;
+                    incorrectQuestionsList.appendChild(listItem);
+                });
+                document.getElementById('incorrect-questions-list').style.display = 'block'; // Show the list header
+            } else {
+                document.getElementById('incorrect-questions-list').style.display = 'none'; // Hide if all correct
+            }
+
+            resultsSummaryDiv.style.display = 'block'; // Show the summary section
+            window.scrollTo(0, document.body.scrollHeight); // Scroll to the results
+        });
+    </script>
+</body>
+</html>

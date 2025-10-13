@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - منصة المبدأ التعليمية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet"> <style>
+        /* أنماط خاصة بصفحة "من نحن" فقط - تم التأكد من عدم تأثيرها على باقي المنصة */
+
+        .about-section {
+            font-family: 'Tajawal', sans-serif; /* تطبيق خط Tajawal على هذا القسم فقط */
+            padding: 50px 30px;
+            max-width: 950px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+            text-align: right;
+            line-height: 2.2; /* زيادة تباعد الأسطر لراحة القراءة */
+            color: #333;
+        }
+        .about-section h2 {
+            font-size: 3.5em; /* حجم أكبر لعنوان "من نحن" */
+            color: #2C3E50;
+            margin-bottom: 35px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 18px;
+            font-weight: 800; /* جعل الخط سميكًا جداً (Extra Bold) */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* إضافة ظل خفيف للنص */
+        }
+        .about-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 120px; /* طول أكبر للخط الزخرفي أسفل العنوان */
+            height: 5px; /* سمك أكبر للخط */
+            background-color: #3498DB;
+            border-radius: 8px;
+        }
+        .about-section h3 {
+            font-size: 2.5em; /* حجم أكبر للعناوين الفرعية */
+            color: #2C3E50;
+            margin-top: 45px; /* مسافة علوية أكبر */
+            margin-bottom: 25px;
+            border-right: 8px solid #3498DB; /* سمك أكبر للشريط الجانبي */
+            padding-right: 15px;
+            display: inline-block;
+            font-weight: 700; /* جعل الخط سميكًا (Bold) */
+        }
+        .about-section p {
+            font-size: 1.4em; /* حجم أكبر للفقرات */
+            margin-bottom: 25px;
+            font-weight: 700; /* جعل النص بولد */
+            color: #444; /* لون نص أغمق قليلاً لزيادة الوضوح */
+        }
+        .about-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 25px;
+        }
+        .about-section ul li {
+            background-color: #E8F5FF; /* لون خلفية أفتح قليلاً لعناصر القائمة */
+            padding: 18px 25px; /* زيادة المساحة الداخلية */
+            margin-bottom: 15px;
+            border-radius: 8px;
+            font-size: 1.25em; /* حجم أكبر لنص عناصر القائمة */
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+            font-weight: 700; /* جعل النص بولد */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* إضافة ظل خفيف للعناصر */
+        }
+        .about-section ul li::before {
+            content: '✨'; /* رمز زخرفي وجذاب أكثر */
+            color: #3498DB; /* لون الرمز ليناسب التصميم */
+            font-weight: bold;
+            margin-left: 18px;
+            font-size: 1.6em; /* حجم أكبر للرمز */
+            line-height: 1;
+        }
+        .about-section .founder-info {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px dashed #BDC3C7; /* خط فاصل أكثر سمكاً ووضوحاً */
+            text-align: center;
+        }
+        .about-section .founder-info p {
+            font-size: 1.6em; /* حجم أكبر لاسم المؤسس */
+            font-weight: 800; /* سميك جداً */
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+        .about-section .founder-info span {
+            font-size: 1.2em; /* حجم أكبر لوصف المؤسس */
+            color: #7F8C8D;
+            font-weight: 700; /* سميك */
+        }
+
+        /* التأكيد على أن B tag سيكون بولد فقط داخل قسم "من نحن" لتجنب التأثير على كل المنصة */
+        .about-section b {
+            font-weight: inherit; /* لضمان أن الـ b tag يأخذ الـ font-weight من الأب */
+        }
+        /* لتطبيق البولد على المحتوى النصي كما طلبته، تم ضبط الـ font-weight على العناصر نفسها (p, li, h2, h3) */
+        /* وليس عن طريق الـ b tag في الهيكل، هذا يضمن تحكماً أفضل وتجنباً للتأثير العام */
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-left">
+                <p>مدرسة المبدأ الابتدائية المختلطة</p>
+            </div>
+            <div class="header-center">
+                <h1>منصة المبدأ التعليمية</h1>
+                <p class="tagline">المنصة مخصصة لمادة التربية الإسلامية للصف الخامس الابتدائي</p>
+            </div>
+            <div class="header-right">
+                <p>مديرية تربية الرصافة الثالثة</p>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="units_overview.html">وحدات المادة</a></li>
+                <li><a href="videos.html">الفيديوهات</a></li>
+                <li><a href="activities.html">تمارين تفاعلية</a></li>
+                <li><a href="about.html" class="active"><b>من نحن</b></a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="about-section">
+            <h2>من نحن</h2> <p>منصة المبدأ التعليمية</p>
+
+            <p>منصة تعليمية رقمية متخصصة في تدريس مادة التربية الإسلامية للصف الخامس الابتدائي، وفق المنهج الرسمي المعتمد من وزارة التربية العراقية، وتهدف إلى تقديم محتوى علمي وتربوي موثوق، بأسلوب حديث يجمع بين الدقة والوضوح والتشويق.</p>
+
+            <p>نؤمن بأن التربية الإسلامية ليست مجرد مادة دراسية، بل هي رسالة تربوية عظيمة تُسهم في بناء شخصية المتعلّم، وتعزيز القيم الأخلاقية والروح الإيمانية لديه منذ الصغر. من هذا المنطلق، صُممت هذه المنصة لتكون عونًا للتلميذ ووليّ أمره والمعلم، عبر دروس مبسّطة، أنشطة تفاعلية، ووسائل تعليمية مشوقة ومتكاملة.</p>
+
+            <h3>رؤيتنا:</h3>
+            <p>أن نُسهم في بناء جيلٍ مؤمنٍ واعٍ بقيمه الإسلامية، من خلال بيئة تعليمية رقمية فعّالة وآمنة.</p>
+
+            <h3>رسالتنا:</h3>
+            <p>تقديم محتوى تربوي عالي الجودة، يُلائم خصائص المرحلة العمرية، ويُسهّل عملية التعليم والتعلّم، بما ينسجم مع متطلبات التعليم الرقمي الحديث.</p>
+
+            <h3>أهدافنا:</h3>
+            <ul>
+                <li>تبسيط مفاهيم التربية الإسلامية بأساليب مشوّقة وسلسة.</li>
+                <li>دعم الأسرة والمعلم بمحتوى جاهز وموثوق.</li>
+                <li>توفير موارد تعليمية رقمية تُراعي التنوع في أنماط التعلم.</li>
+            </ul>
+
+            <div class="founder-info">
+                <p>إعداد وتصميم: الأستاذ مرتضى أحمد</p>
+                <span>معلم مادة التربية الإسلامية والقرآن الكريم</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p class="designer-info">إعداد وتصميم: مرتضى الخفاجي</p>
+    </footer>
+
+</body>
+</html>
