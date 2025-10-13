@@ -1,4 +1,4 @@
-/* General Body & Reset */
+/* Mobile First Design - تصميم الموبايل أولاً */
 body {
     margin: 0;
     padding: 0;
@@ -9,41 +9,21 @@ body {
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Header - Responsive */
+/* Header Mobile */
 .main-header {
-    background-color: #1A1A1A;
+    background: linear-gradient(135deg, #1A1A1A, #2D2D2D);
     color: #FFD700;
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    position: relative;
-    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .header-content {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 0 15px;
-}
-
-.header-left, .header-right {
-    font-size: 0.9em;
-    color: #FFD700;
-    font-weight: bold;
-    text-align: center;
 }
 
 .header-center {
@@ -51,31 +31,32 @@ body {
 }
 
 .main-header h1 {
-    font-size: 1.8em;
+    font-size: 1.4em;
     margin: 0;
     color: #FFD700;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    line-height: 1.2;
+    text-align: center;
 }
 
 .main-header .tagline {
-    font-size: 0.9em;
-    margin-top: 5px;
+    font-size: 0.8em;
+    margin: 5px 0 0 0;
     color: #FFD700;
-    font-weight: bold;
+    text-align: center;
 }
 
-/* Navigation - Responsive */
+.header-left, .header-right {
+    font-size: 0.7em;
+    text-align: center;
+    color: #FFD700;
+}
+
+/* Navigation Mobile - مثل التطبيق */
 .main-nav {
-    background-color: #28a745;
-    margin-top: 10px;
-    padding: 8px 0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    margin: 10px 15px;
+    border-radius: 15px;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
 }
 
 .main-nav ul {
@@ -84,11 +65,14 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 5px;
 }
 
 .main-nav ul li {
-    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.main-nav ul li:last-child {
+    border-bottom: none;
 }
 
 .main-nav ul li a {
@@ -96,45 +80,39 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 1em;
-    padding: 10px 15px;
-    transition: all 0.3s ease;
-    border-radius: 6px;
+    padding: 18px 20px;
     display: block;
-    text-align: center;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: all 0.3s ease;
+    text-align: right;
 }
 
-.main-nav ul li a:hover,
 .main-nav ul li a.active {
-    background-color: #218838;
+    background: rgba(255,255,255,0.15);
     color: #FFD700;
+    border-right: 4px solid #FFD700;
 }
 
-/* Main Content - Responsive */
+/* Main Content Mobile */
 .main-content {
-    max-width: 1200px;
-    margin: 15px auto;
-    padding: 15px;
-    background-color: #FFFFFF;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .hero-section {
     text-align: center;
     margin-bottom: 20px;
-    padding: 15px;
-    background-color: #E6FFE6;
-    border-radius: 8px;
-    border: 1px solid #BCEEBC;
+    padding: 20px;
+    background: linear-gradient(135deg, #E6FFE6, #F0FFF0);
+    border-radius: 12px;
+    border: none;
 }
 
 .hero-section h2 {
     color: #28a745;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 10px;
 }
 
@@ -144,262 +122,110 @@ body {
     line-height: 1.5;
 }
 
-/* Footer - Responsive */
-.main-footer {
-    background-color: #1A1A1A;
-    color: #FFD700;
-    padding: 12px 15px;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
-}
-
-/* Units Overview - Responsive */
+/* Units Mobile - كالتطبيق */
 .units-container {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .main-content > h2 {
     color: #28a745;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.main-content > p {
-    text-align: center;
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 1em;
-}
-
-/* Dropdown units - Responsive */
 .unit-dropdown {
-    background-color: #F8F8F8;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: white;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
 .unit-title {
-    display: block;
-    padding: 15px 20px;
-    font-size: 1.2em;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 18px 20px;
+    font-size: 1.1em;
     font-weight: bold;
-    color: #28a745;
-    cursor: pointer;
-    position: relative;
-    min-height: 50px;
+    border: none;
     display: flex;
     align-items: center;
-}
-
-.unit-title::-webkit-details-marker {
-    display: none;
+    justify-content: space-between;
 }
 
 .unit-title::after {
     content: '▼';
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
-    transition: transform 0.3s ease;
-    color: #FFD700;
     font-size: 0.8em;
+    transition: transform 0.3s ease;
 }
 
-.unit-dropdown[open] > .unit-title::after {
-    transform: translateY(-50%) rotate(0deg);
+.unit-dropdown[open] .unit-title::after {
+    transform: rotate(180deg);
 }
 
-/* Topic list - Responsive */
 .topic-list {
-    list-style: none;
-    padding: 10px 0 10px 20px;
+    background: #F8F9FA;
+    padding: 0;
     margin: 0;
-    border-top: 1px solid #f0f0f0;
-    background-color: #FDFDFD;
+    border: none;
+}
+
+.topic-list li {
+    border-bottom: 1px solid #E9ECEF;
+}
+
+.topic-list li:last-child {
+    border-bottom: none;
 }
 
 .topic-list li a {
-    text-decoration: none;
     color: #333;
-    font-size: 1em;
-    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.95em;
+    padding: 16px 20px;
     display: block;
-    padding: 12px 15px;
-    border-radius: 6px;
     transition: all 0.3s ease;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
+    background: white;
 }
 
 .topic-list li a:hover {
-    background-color: #e0f2e0;
-    color: #FFD700;
-    transform: translateX(5px);
-}
-
-/* Lesson Page - Responsive */
-.main-content.lesson-page {
-    padding: 15px;
-}
-
-.lesson-page h2 {
+    background: #E6FFE6;
     color: #28a745;
-    font-size: 1.5em;
-    text-align: center;
-    margin-bottom: 15px;
+    padding-right: 25px;
 }
 
-.lesson-intro {
-    font-size: 1em;
-    color: #555;
-    text-align: center;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.lesson-section {
-    background-color: #FDFDFD;
-    border: 1px solid #e9e9e9;
-    border-radius: 6px;
+/* Footer Mobile */
+.main-footer {
+    background: #1A1A1A;
+    color: #FFD700;
     padding: 15px;
-    margin-bottom: 20px;
-}
-
-.lesson-section h3 {
-    color: #1a7e31;
-    font-size: 1.3em;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 15px;
     text-align: center;
-}
-
-/* Quran Text - Responsive */
-.quran-text {
-    font-family: 'Traditional Arabic', 'Amiri', serif;
-    font-size: 1.2em;
-    line-height: 1.8;
-    text-align: center;
-    background-color: #FAFFF8;
-    border: 1px dashed #C0E9C0;
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-}
-
-/* Meaning Table - Responsive */
-.meaning-table {
-    width: 100%;
-    border-collapse: collapse;
     margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 0.9em;
-    border-radius: 6px;
-    overflow: hidden;
+    font-size: 0.8em;
 }
 
-.meaning-table th, .meaning-table td {
-    border: 1px solid #c9c9c9;
-    padding: 8px 10px;
-    text-align: center;
-}
-
-.meaning-table th {
-    background-color: #28a745;
-    color: white;
-    font-weight: bold;
-    font-size: 1em;
-}
-
-/* Lesson Navigation - Responsive */
-.lesson-navigation {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px dashed #d5d5d5;
-}
-
-.lesson-navigation a {
-    display: block;
-    background-color: #28a745;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
-    margin: 8px auto;
-    transition: all 0.3s ease;
-    max-width: 250px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* ========== MEDIA QUERIES ========== */
-
-/* Tablets */
-@media (min-width: 768px) {
+/* Desktop Styles - للحواسيب فقط */
+@media (min-width: 1024px) {
+    .main-header {
+        padding: 20px 0;
+    }
+    
     .header-content {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
     }
     
     .header-center {
         order: 0;
     }
     
-    .header-left, .header-right {
-        flex-basis: 25%;
-        text-align: right;
-        font-size: 1em;
-    }
-    
-    .header-right {
-        text-align: left;
-    }
-    
     .main-header h1 {
-        font-size: 2.5em;
-    }
-    
-    .main-header .tagline {
-        font-size: 1.1em;
-    }
-    
-    .main-nav ul {
-        flex-direction: row;
-        justify-content: center;
-        gap: 8px;
-    }
-    
-    .main-content {
-        margin: 25px auto;
-        padding: 20px;
-    }
-    
-    .hero-section h2 {
-        font-size: 1.8em;
-    }
-    
-    .lesson-navigation a {
-        display: inline-block;
-        margin: 0 10px;
-    }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-    .main-header h1 {
-        font-size: 3.2em;
+        font-size: 3.5em;
     }
     
     .main-header .tagline {
@@ -408,43 +234,56 @@ body {
     
     .header-left, .header-right {
         font-size: 1.1em;
+        flex-basis: 25%;
+    }
+    
+    .main-nav {
+        max-width: 1100px;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+    
+    .main-nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .main-nav ul li {
+        border-bottom: none;
+        margin: 0 5px;
+    }
+    
+    .main-nav ul li a {
+        padding: 15px 25px;
+        border-radius: 8px;
     }
     
     .main-content {
+        max-width: 1200px;
         margin: 30px auto;
-        padding: 25px;
+        padding: 30px;
     }
     
     .hero-section {
-        padding: 25px;
+        padding: 30px;
     }
     
     .hero-section h2 {
-        font-size: 2.2em;
+        font-size: 2.5em;
     }
     
     .hero-section p {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
     
     .unit-title {
-        font-size: 1.5em;
-        padding: 18px 25px;
+        font-size: 1.4em;
+        padding: 20px 30px;
     }
     
     .topic-list li a {
         font-size: 1.1em;
-        padding: 14px 20px;
-    }
-    
-    .lesson-page h2 {
-        font-size: 2.2em;
-    }
-    
-    .quran-text {
-        font-size: 1.5em;
-        line-height: 2.2;
-        padding: 20px;
+        padding: 15px 25px;
     }
 }
 
@@ -454,60 +293,7 @@ body {
         font-size: 4.2em;
     }
     
-    .main-header .tagline {
-        font-size: 1.5em;
-    }
-    
     .main-content {
         margin: 40px auto;
-        padding: 30px;
     }
-    
-    .quran-text {
-        font-size: 1.8em;
-        line-height: 2.8;
-        padding: 30px;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-    .header-content {
-        padding: 0 10px;
-    }
-    
-    .main-header h1 {
-        font-size: 1.5em;
-    }
-    
-    .main-content {
-        padding: 10px;
-        margin: 10px auto;
-    }
-    
-    .unit-title {
-        font-size: 1.1em;
-        padding: 12px 15px;
-    }
-    
-    .topic-list {
-        padding: 8px 0 8px 15px;
-    }
-    
-    .topic-list li a {
-        font-size: 0.9em;
-        padding: 10px 12px;
-    }
-    
-    .quran-text {
-        font-size: 1.1em;
-        line-height: 1.6;
-        padding: 12px;
-    }
-}
-
-/* Ensure images are responsive */
-img {
-    max-width: 100%;
-    height: auto;
 }
